@@ -1,0 +1,50 @@
+[
+  {
+    "day": 1,
+    "id": "1",
+    "items": [
+      {
+        "item": "minecraft:honey_bottle",
+        "amount": 16,
+        "name": "The Undead Cleanser",
+        "enchants": {
+          "minecraft:smite": 200,
+          "minecraft:knockback": 15
+        }
+      }
+    ]
+  },
+  {
+    "day": 2,
+    "id": "2",
+    "comment1": "The day this is granted on is decided by 'millisecondsInDay' + 'lastRewardTime' and 'currentStreak' in playerdata.json (time is stored in unix time)",
+    "comment2": "The item format is the same as playtime.json",
+    "items": [
+      {
+        "item": "minecraft:prismarine_crystals",
+        "amount": 16
+      },
+      {
+        "item": "minecraft:prismarine_shard",
+        "amount": 20
+      },
+      {
+        "item": "minecraft:wet_sponge",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "day": 3,
+    "id": "3",
+    "items": [
+      {
+        "item": "minecraft:glistering_melon_slice",
+        "amount": 3
+      },
+      {
+        "item": "minecraft:deepslate_tile_wall"
+      }
+    ]
+  }
+]

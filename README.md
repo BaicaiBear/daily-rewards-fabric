@@ -12,6 +12,7 @@ Contributions are appreciated, as there are many bugs.
 Known ones:
 - Members get daily rewards for days they didn't log on on.
 - A console error comes in every now in then in server console:
+
 Error:
 [20:56:12] [Server thread/INFO]: [STDERR]: java.lang.IndexOutOfBoundsException: Index -1 out of bounds for length 63
 [20:56:12] [Server thread/INFO]: [STDERR]:      at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)

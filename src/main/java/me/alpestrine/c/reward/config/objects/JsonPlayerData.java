@@ -4,23 +4,21 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
-import java.util.HashSet;
-import java.util.SortedSet;
 import java.util.TreeSet;
 
 public class JsonPlayerData implements JSONAble {
     public int playtimeSeconds;
-    public int currentStreak;
+    public boolean hasJointToday;
     public long lastJoin;
-    public long lastRewardTime;
+    public long lastJoinDayTime;
     public TreeSet<String> claimedDaily;
     public TreeSet<String> claimedPlaytime;
 
     public JsonPlayerData() {
         playtimeSeconds = 0;
-        currentStreak = 0;
+        hasJointToday = false;
         lastJoin = 0;
-        lastRewardTime = 0;
+        lastJoinDayTime = 0;
         claimedDaily = new TreeSet<>(CharSequence::compare);
         claimedPlaytime = new TreeSet<>(CharSequence::compare);
     }
@@ -29,9 +27,9 @@ public class JsonPlayerData implements JSONAble {
     public JsonObject toJson() {
         JsonObject obj = new JsonObject();
         obj.addProperty("playtimeSeconds", playtimeSeconds);
-        obj.addProperty("currentStreak", currentStreak);
+        obj.addProperty("hasJointToday", hasJointToday);
         obj.addProperty("lastJoin", lastJoin);
-        obj.addProperty("lastRewardTime", lastRewardTime);
+        obj.addProperty("lastJoinDayTime", lastJoinDayTime);
         JsonArray dailyJa = new JsonArray();
         for (String str : claimedDaily) {
             dailyJa.add(str);
@@ -48,9 +46,9 @@ public class JsonPlayerData implements JSONAble {
     @SuppressWarnings("unchecked cast") @Override
     public JsonPlayerData fromJson(JsonObject object) {
         playtimeSeconds = object.get("playtimeSeconds").getAsInt();
-        currentStreak = object.get("currentStreak").getAsInt();
+        hasJointToday = object.get("hasJointToday").getAsBoolean();
         lastJoin = object.get("lastJoin").getAsLong();
-        lastRewardTime = object.get("lastRewardTime").getAsLong();
+        lastJoinDayTime = object.get("lastJoinDayTime").getAsLong();
         JsonArray dailyJa = object.getAsJsonArray("claimedDaily");
         claimedDaily = new TreeSet<>(CharSequence::compare);
         for (JsonElement je : dailyJa) {

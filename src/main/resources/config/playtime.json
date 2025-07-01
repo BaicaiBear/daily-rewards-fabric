@@ -1,35 +1,12 @@
 [
   {
-    "hours": 0.042,
-    "hoursComment": "150 seconds * 60 seconds in a minute * 60 minutes in an hour == 0.042 (auto rounded on read and write)",
-    "id": "0.042",
-    "idComment": "Optional, will be auto generated from the 'hours' field if absent",
+    "hours": 1.000,
+    "id": "1.000",
     "items": [
       {
-        "item": "minecraft:oxeye_daisy",
-        "itemComment": "Same format as /give, this is required"
-      }
-    ]
-  },
-  {
-    "hours": 0.083,
-    "id": "0.083",
-    "items": [
-      {
-        "item": "minecraft:donkey_spawn_egg",
-        "amount": 16,
-        "name": "Donkey Spawner"
-      },
-      {
-        "item": "minecraft:iron_sword",
-        "amount": 4,
-        "damage": 32,
-        "name": "Very Sharp Sword",
-        "comments": "Amount, Damage and Name are optional, the format of enchantments are <enchantname>:<level>",
-        "enchants": {
-          "minecraft:unbreaking": 4,
-          "minecraft:sharpness": 250
-        }
+        "item": "numismatic-overhaul:bronze_coin",
+        "amount": 20,
+        "name": "铜"
       }
     ]
   }

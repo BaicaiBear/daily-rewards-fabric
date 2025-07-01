@@ -8,7 +8,9 @@
   },
   "mixins": [
     "ServerClickMixin",
-    "ServerMixin",
-    "ServerInteractMixin"
+    "ServerMixin"
+  ],
+  "client": [
+    "ClientInventoryScreenMixin"
   ]
 }

@@ -83,11 +83,11 @@ public class SelectionScreen extends AbstractACScreen {
                             ? String.format("在线时长奖励: " + currentPlaytime / seconds * jpr.getRewardItems().get(0).toItemStack().getCount() + jpr.getRewardItems().get(0).toItemStack().getName().getLiteralString())
                             : String.format("距离下次可以领取在线奖励还有：%s", TimeFormatter.format(IMath.round((seconds - currentPlaytime) / 60, 3))))
                     .button(event -> {
-                        while (data.playtimeSeconds > seconds) {
+                        while (data.playtimeSeconds >= seconds) {
                             onClick(false, isClaimable, event.player, data, jpr, Type.Playtime);
                             data.playtimeSeconds -= seconds;
+                            refresh(event.player);
                         }
-                        refresh(event.player);
                     }));
         }
     }

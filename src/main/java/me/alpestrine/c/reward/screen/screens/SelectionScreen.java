@@ -65,6 +65,7 @@ public class SelectionScreen extends AbstractACScreen {
                     .button(event -> {
                         onClick(false, !hasJointToday, event.player, data, jpr, Type.Daily);
                         data.hasJointToday = true;
+                        refresh(event.player);
                     }));
         }
 
@@ -86,13 +87,14 @@ public class SelectionScreen extends AbstractACScreen {
                             onClick(false, isClaimable, event.player, data, jpr, Type.Playtime);
                             data.playtimeSeconds -= seconds;
                         }
+                        refresh(event.player);
                     }));
         }
     }
 
     @Override
     public String getName() {
-        return "日常奖励领取柜台";
+        return "§l日常奖励领取柜台§r";
     }
 
     protected Map<Double, JsonPlaytimeReward> getPlaytimeRewards() {

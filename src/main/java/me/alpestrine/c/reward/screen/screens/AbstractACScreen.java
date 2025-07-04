@@ -21,7 +21,7 @@ import org.jetbrains.annotations.Nullable;
 public abstract class AbstractACScreen extends AbstractButtonHolder implements Inventory, NamedScreenHandlerFactory {
     private static final int defaultRows = 3;
 
-    public static final ItemStack filler = ItemBuilder.start(Items.GRAY_STAINED_GLASS_PANE).name("").build();
+    public static final ItemStack filler = ItemBuilder.start(Items.WHITE_STAINED_GLASS_PANE).name("").build();
     private final int rows;
     private final DefaultedList<ItemStack> heldStacks;
 

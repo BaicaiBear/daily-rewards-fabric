@@ -12,6 +12,7 @@ import me.alpestrine.c.reward.screen.button.ItemBuilder;
 import me.alpestrine.c.reward.server.MainServer;
 import me.alpestrine.c.reward.util.IMath;
 import me.alpestrine.c.reward.util.TimeFormatter;
+import net.borisshoes.fabricmail.MailGui;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -90,6 +91,15 @@ public class SelectionScreen extends AbstractACScreen {
                         }
                     }));
         }
+
+        // Mailbox Button
+        setButton(26, ItemBuilder.start(Items.CHEST)
+                .name("§l§a邮件")
+                .button(event -> {
+                    MailGui mailGui = new MailGui(event.player);
+                    mailGui.buildMailboxGui();
+                    mailGui.open();
+                }));
     }
 
     @Override

@@ -56,8 +56,15 @@ public class MainServer {
             if (sh instanceof CustomScreenHandler) {
                 ci.cancel();
             }
-            Inventory inventory = slotIndex == ScreenHandler.EMPTY_SPACE_SLOT_INDEX ? player.getInventory() : sh.slots.get(slotIndex).inventory;
-            InventoryEvent ie = new InventoryEvent(slotIndex, button, actionType, inventory, spe);
+            Inventory inventory;
+            InventoryEvent ie;
+            if (slotIndex >= 0 && slotIndex < sh.slots.size()) {
+                inventory = sh.slots.get(slotIndex).inventory;
+                ie = new InventoryEvent(slotIndex, button, actionType, inventory, spe);
+            } else {
+                inventory = player.getInventory();
+                ie = new InventoryEvent(slotIndex, button, actionType, inventory, spe);
+            }
             if (inventory instanceof AbstractACScreen s) {
                 s.onClick(ie);
             }

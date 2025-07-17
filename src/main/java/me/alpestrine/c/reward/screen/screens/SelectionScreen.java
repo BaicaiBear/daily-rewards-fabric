@@ -17,7 +17,10 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.text.ClickEvent;
+import net.minecraft.text.HoverEvent;
 import net.minecraft.text.Text;
+import net.minecraft.text.Texts;
 import net.minecraft.util.Formatting;
 
 import java.util.ArrayList;
@@ -91,6 +94,12 @@ public class SelectionScreen extends AbstractACScreen {
                         }
                     }));
         }
+
+        // Wiki Button
+        setButton(18, ItemBuilder.start(Items.KNOWLEDGE_BOOK)
+                .name("§l§9游戏Wiki")
+                .tooltip("棱镜树的小屋")
+                .button(event -> event.player.sendMessage(Texts.bracketed(Text.literal("点击链接在浏览器打开棱镜树Wiki：https://wiki.mirror.bearcabbage.top/").formatted(Formatting.ITALIC).styled((style) -> style.withColor(Formatting.BLUE).withClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://wiki.mirror.bearcabbage.top/")).withHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, Text.literal("点击在浏览器打开棱镜树的小屋"))))))));
 
         // Mailbox Button
         setButton(26, ItemBuilder.start(Items.CHEST)
